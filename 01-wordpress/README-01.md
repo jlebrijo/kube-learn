@@ -1,8 +1,5 @@
 # Ex.01: Install wordpress
 
-Create cluster in DigitalOcean
-Download config file and copy to `~/.kube/config`
-
 * `kubectl get nodes`: node list
 * `kubectl apply -f kube/00-namespace.yaml`: apply config to cluster 
 * `kubectl get namespaces`: check namespaces
