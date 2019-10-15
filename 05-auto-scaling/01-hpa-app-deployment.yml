@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hpa-example
+  namespace: testing
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        role: hpa
+    spec:
+      containers:
+        - name: php-apache
+          image: k8s.gcr.io/hpa-example
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"

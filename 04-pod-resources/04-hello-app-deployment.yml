@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello
 spec:
-  replicas: 3
+  replicas: 6
   template:
     metadata:
       labels:
@@ -20,7 +20,7 @@ spec:
               value: "password"
           resources:
             requests: # Minimum ensured resources
-              memory: "256Mi" # RAM
+              memory: "128Mi" # RAM
               cpu: "150m" # Load in mili-cpus
             limits: # Maximum allowed resources (if they are free in a node)
               memory: "512Mi"
