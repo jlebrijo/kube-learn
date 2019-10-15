@@ -34,4 +34,5 @@ Here we can note several things:
 * CPU requests sum is: 30% + 10 + 10 + 10 + 15 + 15 = 90%
 * We find only 2 replicas: third is not allocated because it needs 15% cpu, having only 10% free
 * `kubectl -n testing get pods` checks one "Pending" pod
- 
+* Limit can never be lower than the request. You will get an error
+* You can define requests/limits for namespaces, as you can see in [Best Practices](https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-resource-requests-and-limits)
