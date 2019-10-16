@@ -1,1 +1,7 @@
 .idea
+
+.terraform
+terraform.tfvars
+*.tfstate*
+
+kubeconfig.yaml
