@@ -16,3 +16,5 @@ Concepts:
 * namespaces
 * pods
 * services
+* apps
+* tiers
