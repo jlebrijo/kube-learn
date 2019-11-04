@@ -2,7 +2,7 @@
 
 Containerize an example Rails App.
 
-Check this files to be modified on this [commit](https://github.com/jlebrijo/spike/commit/e7643ded0827d41757ade2edd8c3cde55ed22728):
+Check this files to be modified on this [commit](https://github.com/jlebrijo/spike/commit/454ef035254215f6d4d468b3b78d4f8ce105f53c):
 * Dockerfile: image builder.
 * docker-compose.yml: simulates a production environment.
 * config/database.yml: to point to postgres container.
@@ -22,7 +22,11 @@ Useful commands:
 * `docker-compose exec app tail -f log/*`
 * `docker-compose exec app rails c`
 
+Run tests for the image:
+* `docker-compose run -e RAILS_ENV=test app rails db:create` create test database.
+* `docker-compose run -e RAILS_ENV=test app rspec` run tests.
+
 Commands to push your docker image to Github Packages:
-* `docker login docker.pkg.github.com -u jlebrijo -p <GITHUB_TOKEN>` login to Github.
-* `docker build -t docker.pkg.github.com/jlebrijo/spike/spike .` build image.
-* `docker push docker.pkg.github.com/jlebrijo/spike/spike` push image.
+* `docker login -u jlebrijo` login to DockerHub.
+* `docker build -t jlebrijo/spike .` build image.
+* `docker push jlebrijo/spike` push image.
