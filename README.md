@@ -19,4 +19,6 @@ Concepts:
 * services: exposes an applicaion running on a set of pods
   * load balancer: svc type to share requestes among several pods
   * node port: publish one port to another, external or internal to cluster
+* Job: create one pod to run some tasks and ensure comlpetion.
+
   
