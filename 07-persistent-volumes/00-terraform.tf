@@ -14,7 +14,10 @@ resource "digitalocean_kubernetes_cluster" "mycluster" {
   node_pool {
     name       = "mypool"
     size       = "s-1vcpu-2gb"
+    auto_scale = "true"
     node_count = 1
+    min_nodes  = 1
+    max_nodes  = 10
     tags = ["mypool-nodes"]
   }
 }
